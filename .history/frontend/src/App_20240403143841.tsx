@@ -9,7 +9,7 @@ import { searchCompanies } from './api';
 function App() {
 
   const [search, setSearch] = useState<string>(""); 
-  const [searchResult, setSearchResult] = useState<CompanySearch[]>();
+  const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,13 +18,16 @@ function App() {
   };
 
   const onClick = async (e: SyntheticEvent) => {
+    console.log("search", search);
+    console.log("coucou");
     const result = await searchCompanies(search);
-    
+    //setServerError(result.data);
     if (typeof result === "string") {
       console.log("error api call");
       setServerError(result);
     } else if (Array.isArray(result.data)) {
       console.log("succes api call");
+      console.log(result.data);
       setSearchResult(result.data);
     }
     console.log(searchResult);

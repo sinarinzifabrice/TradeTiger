@@ -18,8 +18,10 @@ function App() {
   };
 
   const onClick = async (e: SyntheticEvent) => {
+    console.log("search", search);
+    console.log("coucou");
     const result = await searchCompanies(search);
-    
+    //setServerError(result.data);
     if (typeof result === "string") {
       console.log("error api call");
       setServerError(result);

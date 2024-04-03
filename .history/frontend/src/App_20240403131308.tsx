@@ -14,17 +14,15 @@ function App() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
-    console.log(e);
+      console.log(e);
   };
 
   const onClick = async (e: SyntheticEvent) => {
-    const result = await searchCompanies(search);
-    
+    const result = await searchCompagnies(search);
+    //setServerError(result.data);
     if (typeof result === "string") {
-      console.log("error api call");
       setServerError(result);
     } else if (Array.isArray(result.data)) {
-      console.log("succes api call");
       setSearchResult(result.data);
     }
     console.log(searchResult);

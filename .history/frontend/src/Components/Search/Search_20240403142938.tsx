@@ -12,7 +12,7 @@ const Search: React.FC<Props> = ({onClick, search, handleChange }: Props): JSX.E
     return (
         <div>
             <input value={search} onChange={(e) => handleChange(e)}></input>
-            <button onClick={(e) => onClick(e)}/>
+            <button onClick={(e) => sea(e)}/>
         </div>
     )
 }

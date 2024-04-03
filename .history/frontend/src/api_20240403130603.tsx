@@ -11,7 +11,7 @@ export interface SearchResponse{
  * @returns A promise resolving to the search response data. If successful, it returns an array of CompanySearch objects.
  *          If an error occurs, it returns a string describing the error.
  */
-export const searchCompanies = async(query: string) => {
+export const searchCompagnies = async(query: string) => {
     try {
         const data = await axios.get<SearchResponse>(
             `https://financialmodelingprep.com/api/v3/search?query=${query}&limit=10&exchange=NASDAQ&apikey=${process.env.REACT_APP_API_KEY}`

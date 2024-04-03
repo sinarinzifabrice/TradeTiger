@@ -25,6 +25,7 @@ function App() {
       setServerError(result);
     } else if (Array.isArray(result.data)) {
       console.log("succes api call");
+      // console.log(result.data);
       setSearchResult(result.data);
     }
     console.log(searchResult);
