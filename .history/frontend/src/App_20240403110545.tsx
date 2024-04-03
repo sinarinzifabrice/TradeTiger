@@ -1,25 +1,32 @@
 
-import { ChangeEvent, SyntheticEvent, useState } from 'react';
 import './App.css';
 import CardList from './Components/Card/CardList';
 import Search from './Components/Search/Search';
 
 function App() {
 
-  const [search, setsearch] = useState<string>(""); 
+  const Search: React.FC<Props> = (props: Props): JSX.Element => {
+
+    const [search, setsearch] = useState<string>(""); 
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setsearch(e.target.value);
         console.log(e);
     }
 
-    const onClick = (e: SyntheticEvent) => {
+    const onclick = (e: SyntheticEvent) => {
         console.log(e);
     }
+    return (
+        <div>
+            <input value={search} onChange={(e) => onclick(e)}></input>
+        </div>
+    )
+}
 
   return (
     <div className="App">
-      <Search onClick={onClick} search={search} handleChange={handleChange}/>
+      <Search/>
       <CardList/>
     </div>
   );

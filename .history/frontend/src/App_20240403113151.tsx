@@ -1,5 +1,4 @@
 
-import { ChangeEvent, SyntheticEvent, useState } from 'react';
 import './App.css';
 import CardList from './Components/Card/CardList';
 import Search from './Components/Search/Search';
@@ -19,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <Search onClick={onClick} search={search} handleChange={handleChange}/>
+      <Search/>
       <CardList/>
     </div>
   );

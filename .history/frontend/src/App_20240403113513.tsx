@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <Search onClick={onClick} search={search} handleChange={handleChange}/>
+      <Search onClick={onClick} search={search} handleChange={/>
       <CardList/>
     </div>
   );
